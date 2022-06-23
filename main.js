@@ -31,9 +31,10 @@ class TransaccionPago{
         return this.digitosTarjetaTransaccion.toString().length;
     }
 
-    // # JULI
-    // def numeroTransaccionInt(self):
-    //     return str(self.digitosTarjetaTransaccion).isnumeric()
+    // JULI
+    tipoIntNumeroTransaccion(){
+     return Number.isInteger(this.digitosTarjetaTransaccion);
+    }
     
 }
 

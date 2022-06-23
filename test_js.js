@@ -41,4 +41,13 @@ describe("Pruebas unitarias TransaccionPago", () => {
         })
 
     })
+
+    describe("Pruebas juli", () => {
+        
+        it("Verificamos si el nro de tarjeta es entero", () =>{
+            let transaccionPrueba = new TransaccionPago("Victor Nomberto", 1234, "En espera");
+            assert.equal(transaccionPrueba.tipoIntNumeroTransaccion(), true);
+        })
+
+    })
 })

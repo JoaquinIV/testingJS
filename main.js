@@ -20,8 +20,9 @@ class TransaccionPago{
         return this.fechaActualTransacción;
     }
     
-
 }
 
-export {TransaccionPago}
+module.exports = { 
+    TransaccionPago, 
+};
 

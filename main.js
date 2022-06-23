@@ -52,10 +52,17 @@ class Pago{
     //JUAN
     codigoContieneSoloAlfanumericos(){
         return /^[0-9A-Za-z]+$/.test(this.codigoPago);
-    }
-    
+    }  
     esEstadoPendiente(){
         return this.estadoPago == "Pendiente"
+    }
+
+    //FRANCO
+    esFloatMontoPago(){
+        return !(/^-?[0-9]+$/.test(this.montoPago));
+    }
+    tieneOchoDigitosCodigoPago(){
+        return this.codigoPago.toString().length == 8;
     }
    
 

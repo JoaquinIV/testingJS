@@ -57,13 +57,26 @@ describe("Pruebas unitarias Pago", () => {
     describe("Pruebas Juan", () => {
         
         it("Verificamos el codigo de pago es alfanumerico", () =>{
-            let pagoPrueba = new Pago("ASDF123456", 1234, 5000.22, "Pendiente");
+            let pagoPrueba = new Pago("ASDF1234", 1234, 5000.22, "Pendiente");
             assert.equal(pagoPrueba.codigoContieneSoloAlfanumericos(), true);
         })
 
         it("Verificamos si el estado de pago es pendiente como defecto", () =>{
-            let pagoPrueba = new Pago("ASDF123456", 1234, 5000.22);
+            let pagoPrueba = new Pago("ASDF1234", 1234, 5000.22);
             assert.equal(pagoPrueba.esEstadoPendiente(), true);
+        })
+    })
+
+    describe("Pruebas Franco", () => {
+        
+        it("Verificamos el codigo de pago tiene ocho dígitos", () =>{
+            let pagoPrueba = new Pago("ASDF1234", 1234, 5000.22, "Pendiente");
+            assert.equal(pagoPrueba.tieneOchoDigitosCodigoPago(), true);
+        })
+
+        it("Verificamos si el monto de pago es un tipo float", () =>{
+            let pagoPrueba = new Pago("ASDF1234", 1234, 5000.22, "Pendiente");
+            assert.equal(pagoPrueba.esFloatMontoPago(), true);
         })
     })
 })

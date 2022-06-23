@@ -16,9 +16,24 @@ class TransaccionPago{
     esNombreCadenaVacia(){
         return this.nombreTitularTransaccion.length == 0;
     }
+    nombreTitular(){
+        return this.nombreTitularTransaccion.split(" ")[0]
+    }
     setFechaActual(){
         return this.fechaActualTransacción;
     }
+
+    // SARA
+    esNombreAlfabetico(){
+        return /^[a-zA-Z()]+$/.test(this.nombreTitularTransaccion.split(" ").join(""));
+    }
+    nroDigitosTarjetaTransaccion(){
+        return this.digitosTarjetaTransaccion.toString().length;
+    }
+
+    // # JULI
+    // def numeroTransaccionInt(self):
+    //     return str(self.digitosTarjetaTransaccion).isnumeric()
     
 }
 

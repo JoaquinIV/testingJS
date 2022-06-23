@@ -1,6 +1,6 @@
 
 const assert = require('assert');
-const {TransaccionPago} = require('./main');
+const {TransaccionPago, Pago} = require('./main');
 
 describe("Pruebas unitarias TransaccionPago", () => {
     
@@ -8,12 +8,12 @@ describe("Pruebas unitarias TransaccionPago", () => {
         
         it("Verificamos si el titular de la tarjeta es una variable string", () =>{
             let transaccionPrueba = new TransaccionPago("Pedro Fernandez", 1234, "En espera");
-            assert.equal(transaccionPrueba.esNombreTitularString(), 'string')
+            assert.equal(transaccionPrueba.esNombreTitularString(), 'string');
         })
 
         it("Verificamos si el titular de la tarjeta no sea una cadena vacía", () =>{
             let transaccionPrueba = new TransaccionPago("Pedro Fernandez", 1234, "En espera");
-            assert.equal(transaccionPrueba.esNombreCadenaVacia(),false)
+            assert.equal(transaccionPrueba.esNombreCadenaVacia(),false);
         })
 
         it("Verificamos si el titular de la tarjeta no sea una cadena vacía", () =>{
@@ -49,5 +49,21 @@ describe("Pruebas unitarias TransaccionPago", () => {
             assert.equal(transaccionPrueba.tipoIntNumeroTransaccion(), true);
         })
 
+    })
+})
+
+describe("Pruebas unitarias Pago", () => {
+    
+    describe("Pruebas Juan", () => {
+        
+        it("Verificamos el codigo de pago es alfanumerico", () =>{
+            let pagoPrueba = new Pago("ASDF123456", 1234, 5000.22, "Pendiente");
+            assert.equal(pagoPrueba.codigoContieneSoloAlfanumericos(), true);
+        })
+
+        it("Verificamos si el estado de pago es pendiente como defecto", () =>{
+            let pagoPrueba = new Pago("ASDF123456", 1234, 5000.22);
+            assert.equal(pagoPrueba.esEstadoPendiente(), true);
+        })
     })
 })

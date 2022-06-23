@@ -9,7 +9,7 @@ class TransaccionPago{
         this.estadoTransaccion = estadoTransaccion;     
     }
 
-    //Nacho
+    //IGNA
     esNombreTitularString(){
         return typeof(this.nombreTitularTransaccion);
     }
@@ -23,7 +23,7 @@ class TransaccionPago{
         return this.fechaActualTransacción;
     }
 
-    // SARA
+    //SARA
     esNombreAlfabetico(){
         return /^[a-zA-Z()]+$/.test(this.nombreTitularTransaccion.split(" ").join(""));
     }
@@ -31,14 +31,41 @@ class TransaccionPago{
         return this.digitosTarjetaTransaccion.toString().length;
     }
 
-    // JULI
+    //JULI
     tipoIntNumeroTransaccion(){
      return Number.isInteger(this.digitosTarjetaTransaccion);
     }
     
 }
 
+class Pago{
+    // clientePago: aca va la instancia de cliente
+
+    constructor(codigoPago,nroFactura,montoPago,estadoPago = "Pendiente"){
+        this.codigoPago = codigoPago;
+        this.nroFactura = nroFactura;
+        this.montoPago = montoPago;
+        this.estadoPago = estadoPago;
+        this.fechaCreacionPago = Date.now();
+    }
+
+    //JUAN
+    codigoContieneSoloAlfanumericos(){
+        return /^[0-9A-Za-z]+$/.test(this.codigoPago);
+    }
+    
+    esEstadoPendiente(){
+        return this.estadoPago == "Pendiente"
+    }
+   
+
+}
+
+
+    
+
 module.exports = { 
     TransaccionPago, 
+    Pago,
 };
 

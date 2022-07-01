@@ -66,10 +66,7 @@ class Pago{
     }
    
 
-}
-
-
-    
+} 
 
 module.exports = { 
     TransaccionPago, 

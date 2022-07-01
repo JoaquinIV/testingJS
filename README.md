@@ -7,7 +7,7 @@
 + Es un framework de pruebas. 
 + Permite ejecutar las pruebas en Node y en el navegador. 
 + Permite la generación de reportes acerca del resultado de la ejecución.
-+ Para saber más sobre el framework [Mocha](https://mochajs.org/)
++ Para saber más sobre el framework [Mocha]
 
 ## CHAI 
 
@@ -17,3 +17,4 @@
 + Para saber más sobre la libreria [Chai]
 
 [Chai]:<https://www.chaijs.com/>
+[Mocha]:<https://mochajs.org/>
